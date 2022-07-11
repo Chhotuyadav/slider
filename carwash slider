@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+
+  <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide swiper-slide-one ">
+      <div class="common">
+        WELCOME TO ON THE  SPOT <br> AUTO DETAIL
+      </div>
+    </div>
+    <div class="swiper-slide swiper-slide-two">
+      <div class="common">
+        
+      </div>
+    </div>
+    <div class="swiper-slide swiper-slide-three">
+      <div class="common">
+        
+      </div>
+    </div>
+    <div class="swiper-slide swiper-slide-four">
+      <div class="common">
+        
+      </div>
+    </div>
+    <div class="swiper-slide swiper-slide-five">
+      <div class="common">
+        
+      </div>
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.2/swiper-bundle.min.js'></script>
+  <style type="text/css">
+  *,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.swiper-slide {
+ /* display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 10vw;
+  text-align: center;
+  color: #fff;
+  transition: 0.5s all;*/
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* button style */
+.swiper-pagination-bullet {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: 0 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.swiper-pagination-bullet span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* button circle */
+.progress {
+  transform: rotate(-90deg);
+  height: 41px !important;
+  background-color: transparent!important;
+}
+.circle-origin {
+  fill: transparent;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 125.664px;
+  stroke-dashoffset: 125.664px;
+}
+
+.swiper-pagination-bullet-active .circle-origin {
+  animation: progress 5s;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 125.664px;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -125.664px;
+  }
+}
+
+/*header css*/
+.nav_bg{
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+}
+.navbar-dark{
+  background-color: rgb(0 0 0 / 60%) !important;
+}
+
+.swiper-slide-one{
+  background-image: url('<?= base_url('images/microfiber-3789848_1920.jpg') ?>') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide-two{
+  background-image: url('<?= base_url('images/garage-1837336_1920.jpg') ?>') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide-three{
+  background-image: url('<?= base_url('images/automobile-2749833_1920.jpg') ?>') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide-four{
+  background-image: url('<?= base_url('images/car-wash-1619823_1920.jpg') ?>') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide-five{
+  background-image: url('<?= base_url('images/car-4305163_1920.jpg') ?>') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.common {
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+    color: #fff;
+    display: flex;
+    transition: 0.5s all;
+    font-weight: 600;
+}
+.swiper-button-prev,.swiper-button-next {
+    border: 1px solid white;
+    border-radius: 76px;
+    height: 55px;
+    width: 55px;
+    color: white;
+}
+
+.swiper-button-prev:hover{
+  color: black;
+  background:white ;
+  transition: all 0.5;
+}
+
+.swiper-button-next:hover{
+  color: black;
+  background:white ;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: 'prev';
+    font-size: 18px;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: 'next';
+    font-size: 18px;
+}
+
+
+
+
+
+</style>
+</body>
+</html>
+
+<script type="text/javascript">
+  const slide = document.querySelectorAll(".swiper-slide");
+for (const i of slide) {
+  const random = (number) => Math.floor(Math.random() * (number + 1));
+  const rndCol = `rgb(${random(255)},${random(255)},${random(255)})`;
+  i.style.backgroundColor = rndCol;
+}
+const swiperOptions = {
+  loop: "infinite",
+  effect: "fade",
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  // custom pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (i, className) {
+      return `
+   <button class="${className}">
+  <svg class="progress" width="41" height="41"><circle class="circle-origin" r="20" cx="20.5" cy="20.5"></circle></svg><span>${
+    i + 1
+  }</span>
+</button>
+      `;
+    }
+  }
+};
+
+const swiper = new Swiper(".swiper", swiperOptions);
+</script>
+
+
